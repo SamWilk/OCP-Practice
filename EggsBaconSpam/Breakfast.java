@@ -7,6 +7,7 @@ public class Breakfast{
 
     //Constructor
     public Breakfast(String inputFile) throws IOException{
+
         try{
 
             System.out.println("Being read");
@@ -19,7 +20,7 @@ public class Breakfast{
                 if(k == 0){//When the file is done reading
                     break;
                 }
-                System.out.println("Number of Orders: " + k);
+                //System.out.println("Number of Orders: " + k);
                 for(int i = 0; i < k; i++){
                     //System.out.println(line = reader.readLine());
                     line = reader.readLine();
@@ -32,11 +33,14 @@ public class Breakfast{
         }catch(IOException e){
             System.err.println("No File found");
         }
+        
+
     }
 
     //Gobals
     //List<Queue<String>> Items = new ArrayList<Queue<String>>();//Is a simple linked list of Queues
     PriorityQueue<String> Items = new PriorityQueue<String>();//Prior queue will sort strings lexio
+    PriorityQueue<PriorityQueue<String>> OrderList = new PriorityQueue<PriorityQueue<String>>();
     TreeSet<String> Names = new TreeSet<String>();//Acts as red-black tree
 
     //Creates the priority queue so that the items that have been ordered
