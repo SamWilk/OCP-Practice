@@ -55,6 +55,7 @@ public class Breakfast{
         for(int i = 1; i <= strLen; i++){
             if(Items.contains(tokens[i]) == false){
                 Items.add(tokens[i]);
+                OrderList.add(Items);//For this to work I need to make a new Queue each time
             }
         }
 
